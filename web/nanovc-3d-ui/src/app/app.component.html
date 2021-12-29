@@ -1,12 +1,28 @@
 <div>
 
-  <ngt-canvas>
+  <ngt-canvas [scene]="{background: 'white'| color}">
 
     <ngt-ambient-light></ngt-ambient-light>
     <ngt-spot-light [position]="[2, 2, 2]"></ngt-spot-light>
 
+    <ngt-grid-helper></ngt-grid-helper>
+
+
+
+    <ngt-soba-gizmo-helper [margin]="[80,80]" [alignment]="'top-left'">
+      <ngt-soba-gizmo-viewport
+        [axisColors]="['red', 'green', 'blue']"
+        labelColor="black"
+        [hideNegativeAxes]="false"
+      ></ngt-soba-gizmo-viewport>
+    </ngt-soba-gizmo-helper>
+
+
     <app-cube [position]="[2, 0, 0]"></app-cube>
     <app-cube [position]="[-2, 0, 0]"></app-cube>
+
+    <ngt-soba-orbit-controls [makeDefault]="true"></ngt-soba-orbit-controls>
+
   </ngt-canvas>
 </div>
 
