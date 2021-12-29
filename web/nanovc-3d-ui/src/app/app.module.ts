@@ -7,7 +7,8 @@ import {NgtCoreModule} from "@angular-three/core";
 import { CubeComponent } from './cube/cube.component';
 import {NgtMeshModule} from "@angular-three/core/meshes";
 import {NgtBoxGeometryModule} from "@angular-three/core/geometries";
-import {NgtMeshBasicMaterialModule} from "@angular-three/core/materials";
+import {NgtMeshBasicMaterialModule, NgtMeshStandardMaterialModule} from "@angular-three/core/materials";
+import {NgtAmbientLightModule, NgtSpotLightModule} from "@angular-three/core/lights";
 
 @NgModule({
   declarations: [
@@ -21,6 +22,9 @@ import {NgtMeshBasicMaterialModule} from "@angular-three/core/materials";
     NgtMeshModule,
     NgtBoxGeometryModule,
     NgtMeshBasicMaterialModule,
+    NgtMeshStandardMaterialModule,
+    NgtAmbientLightModule,
+    NgtSpotLightModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

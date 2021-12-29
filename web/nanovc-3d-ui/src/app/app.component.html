@@ -1,6 +1,10 @@
 <div>
 
   <ngt-canvas>
+
+    <ngt-ambient-light></ngt-ambient-light>
+    <ngt-spot-light [position]="[2, 2, 2]"></ngt-spot-light>
+
     <app-cube [position]="[2, 0, 0]"></app-cube>
     <app-cube [position]="[-2, 0, 0]"></app-cube>
   </ngt-canvas>
