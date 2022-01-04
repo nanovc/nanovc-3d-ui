@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {NgtColorPipeModule, NgtCoreModule} from "@angular-three/core";
+import {NgtColorPipeModule, NgtCoreModule, NgtMathPipeModule} from "@angular-three/core";
 import { CubeComponent } from './cube/cube.component';
 import {NgtMeshModule} from "@angular-three/core/meshes";
 import {NgtBoxGeometryModule, NgtExtrudeGeometryModule, NgtShapeGeometryModule} from "@angular-three/core/geometries";
@@ -42,6 +42,7 @@ import { RepoComponent } from './repo/repo.component';
     NgtColorPipeModule,
     NgtShapeGeometryModule,
     NgtExtrudeGeometryModule,
+    NgtMathPipeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
