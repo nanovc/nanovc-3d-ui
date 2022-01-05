@@ -1,14 +1,14 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {NgtVector3} from "@angular-three/core";
-import {ExtrudeGeometry, Shape} from "three";
+import {Shape} from "three";
 import {Shapes} from "../shapes";
 
 @Component({
-  selector: 'app-repo',
-  templateUrl: './repo.component.html',
-  styleUrls: ['./repo.component.scss']
+  selector: 'app-commit',
+  templateUrl: './commit.component.html',
+  styleUrls: ['./commit.component.scss']
 })
-export class RepoComponent implements OnInit {
+export class CommitComponent implements OnInit {
 
   constructor() { }
 
@@ -20,6 +20,5 @@ export class RepoComponent implements OnInit {
 
     this.shape = Shapes.createRoundedSquare(0,0, 1, 0.2);
   }
-
 
 }

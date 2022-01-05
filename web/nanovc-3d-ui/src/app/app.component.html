@@ -1,9 +1,21 @@
 <div>
 
-  <ngt-canvas [scene]="{background: 'white'| color}">
+  <ngt-canvas [scene]="{background: 'white'| color}" [shadows]="true">
 
-    <ngt-ambient-light></ngt-ambient-light>
-    <ngt-spot-light [position]="[2, 2, 2]"></ngt-spot-light>
+    <ngt-ambient-light [intensity]="0.9"></ngt-ambient-light>
+
+<!--    spotlight-args:
+    https://threejs.org/docs/#api/en/lights/SpotLight
+
+    color - (optional) hexadecimal color of the light. Default is 0xffffff (white).
+    intensity - (optional) numeric value of the light's strength/intensity. Default is 1.
+
+    distance - Maximum range of the light. Default is 0 (no limit).
+    angle - Maximum angle of light dispersion from its direction whose upper bound is Math.PI/2.
+    penumbra - Percent of the spotlight cone that is attenuated due to penumbra. Takes values between zero and 1. Default is zero.
+    decay - The amount the light dims along the distance of the light.
+-->
+    <ngt-spot-light [position]="[2, 2, 2]" [args]="['white' | color, 2, 40, 0.3, 1, 0.115]" [castShadow]="true"></ngt-spot-light>
 
     <ngt-grid-helper></ngt-grid-helper>
 

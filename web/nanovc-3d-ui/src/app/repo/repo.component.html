@@ -2,15 +2,22 @@
   #mesh="ngtMesh"
   [position]="position"
   [rotation]="[-(0.5 | mathConst:'PI'), 0, 0]"
+  [receiveShadow]="true"
 >
 
   <ngt-extrude-geometry [args]="[shape,
-  {
-    steps: 1,
-    depth: 0.1,
-    bevelEnabled: false
-  }]"></ngt-extrude-geometry>
-  <ngt-mesh-standard-material
+    {
+      steps: 1,
+      depth: 0.1,
+      bevelEnabled: false
+    }]"></ngt-extrude-geometry>
+  <ngt-mesh-physical-material
     [parameters]="{ color: 'white' }"
-  ></ngt-mesh-standard-material>
+  ></ngt-mesh-physical-material>
+
+<!--  <ngt-mesh-normal-material></ngt-mesh-normal-material>-->
+
+
+  <app-commit [position]="[0,0,0.15]"></app-commit>
+
 </ngt-mesh>

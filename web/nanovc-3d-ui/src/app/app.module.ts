@@ -6,8 +6,17 @@ import { AppComponent } from './app.component';
 import {NgtColorPipeModule, NgtCoreModule, NgtMathPipeModule} from "@angular-three/core";
 import { CubeComponent } from './cube/cube.component';
 import {NgtMeshModule} from "@angular-three/core/meshes";
-import {NgtBoxGeometryModule, NgtExtrudeGeometryModule, NgtShapeGeometryModule} from "@angular-three/core/geometries";
-import {NgtMeshBasicMaterialModule, NgtMeshStandardMaterialModule} from "@angular-three/core/materials";
+import {
+  NgtBoxGeometryModule,
+  NgtExtrudeGeometryModule,
+  NgtShapeGeometryModule,
+  NgtSphereGeometryModule
+} from "@angular-three/core/geometries";
+import {
+  NgtMeshBasicMaterialModule,
+  NgtMeshNormalMaterialModule, NgtMeshPhysicalMaterialModule,
+  NgtMeshStandardMaterialModule
+} from "@angular-three/core/materials";
 import {NgtAmbientLightModule, NgtSpotLightModule} from "@angular-three/core/lights";
 import {NgtSobaOrbitControlsModule} from "@angular-three/soba/controls";
 import {NgtGridHelperModule, NgtPolarGridHelperModule} from "@angular-three/core/helpers";
@@ -17,12 +26,14 @@ import {
   NgtSobaGizmoViewportModule
 } from "@angular-three/soba/abstractions";
 import { RepoComponent } from './repo/repo.component';
+import { CommitComponent } from './commit/commit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CubeComponent,
-    RepoComponent
+    RepoComponent,
+    CommitComponent
   ],
   imports: [
     BrowserModule,
@@ -43,6 +54,9 @@ import { RepoComponent } from './repo/repo.component';
     NgtShapeGeometryModule,
     NgtExtrudeGeometryModule,
     NgtMathPipeModule,
+    NgtSphereGeometryModule,
+    NgtMeshNormalMaterialModule,
+    NgtMeshPhysicalMaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
