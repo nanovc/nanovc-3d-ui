@@ -7,7 +7,7 @@ import {NgtColorPipeModule, NgtCoreModule, NgtMathPipeModule} from "@angular-thr
 import { CubeComponent } from './cube/cube.component';
 import {NgtMeshModule} from "@angular-three/core/meshes";
 import {
-  NgtBoxGeometryModule,
+  NgtBoxGeometryModule, NgtCylinderGeometryModule,
   NgtExtrudeGeometryModule,
   NgtShapeGeometryModule,
   NgtSphereGeometryModule
@@ -27,13 +27,15 @@ import {
 } from "@angular-three/soba/abstractions";
 import { RepoComponent } from './repo/repo.component';
 import { CommitComponent } from './commit/commit.component';
+import { ContentAreaComponent } from './content-area/content-area.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CubeComponent,
     RepoComponent,
-    CommitComponent
+    CommitComponent,
+    ContentAreaComponent
   ],
   imports: [
     BrowserModule,
@@ -57,6 +59,7 @@ import { CommitComponent } from './commit/commit.component';
     NgtSphereGeometryModule,
     NgtMeshNormalMaterialModule,
     NgtMeshPhysicalMaterialModule,
+    NgtCylinderGeometryModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

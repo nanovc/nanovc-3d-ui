@@ -1,0 +1,15 @@
+<ngt-mesh
+  #mesh="ngtMesh"
+  [position]="position"
+  [castShadow]="true"
+>
+
+  <ngt-extrude-geometry [args]="[shape,
+    {
+      steps: 1,
+      depth: 0.01,
+      bevelEnabled: false
+    }]"></ngt-extrude-geometry>
+
+  <ngt-mesh-normal-material></ngt-mesh-normal-material>
+</ngt-mesh>
