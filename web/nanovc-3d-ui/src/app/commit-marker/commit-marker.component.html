@@ -23,15 +23,22 @@
   in order to define the points in which we start (or end) calculating those vertices.
   -->
   <ngt-sphere-geometry
-    [args]="[0.05, 16, 16]"
+    [args]="[0.04, 24, 24]"
   ></ngt-sphere-geometry>
 
-  <ngt-mesh-normal-material></ngt-mesh-normal-material>
+  <ngt-mesh-standard-material
+                              [parameters]="{
+     color: '#777777',
+     roughness: 0.3,
+     metalness: 0.8,
+     transparent: false
+      }"
+  ></ngt-mesh-standard-material>
 </ngt-mesh>
 
 <ngt-mesh
   #mesh2="ngtMesh"
-  [position]="[0, 0.075, 0]"
+  [position]="[0, 0.07, 0]"
   [castShadow]="true"
 >
 
@@ -49,10 +56,17 @@
   -->
 
   <ngt-cylinder-geometry
-    [args]="[0.005, 0.005, 0.06]"
+    [args]="[0.005, 0.005, 0.0725]"
   ></ngt-cylinder-geometry>
 
-  <ngt-mesh-normal-material></ngt-mesh-normal-material>
+  <ngt-mesh-standard-material
+    [parameters]="{
+     color: '#777777',
+     roughness: 0.3,
+     metalness: 0.8,
+     transparent: false
+      }"
+  ></ngt-mesh-standard-material>
 </ngt-mesh>
 
 </ngt-group>
