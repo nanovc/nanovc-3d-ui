@@ -15,7 +15,7 @@ import {
   NgtBoxGeometryModule, NgtCylinderGeometryModule,
   NgtExtrudeGeometryModule,
   NgtShapeGeometryModule,
-  NgtSphereGeometryModule
+  NgtSphereGeometryModule, NgtTubeGeometryModule
 } from "@angular-three/core/geometries";
 import {
   NgtMeshBasicMaterialModule,
@@ -37,6 +37,7 @@ import {ContentAreaComponent} from './content-area/content-area.component';
 import {CommitMarkerComponent} from './commit-marker/commit-marker.component';
 import {RepoComponentBase} from "./repo-component-base";
 import { ContentComponent } from './content/content.component';
+import { ContentLinkComponent } from './content-link/content-link.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { ContentComponent } from './content/content.component';
     CommitComponent,
     ContentAreaComponent,
     CommitMarkerComponent,
-    ContentComponent
+    ContentComponent,
+    ContentLinkComponent
   ],
   imports: [
     BrowserModule,
@@ -74,6 +76,7 @@ import { ContentComponent } from './content/content.component';
     NgtMeshPhysicalMaterialModule,
     NgtCylinderGeometryModule,
     NgtSidePipeModule,
+    NgtTubeGeometryModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,39 @@
+<ngt-group
+  [position]="offsetBy(0,0,0)"
+  [scale]="scale"
+>
+
+  <ngt-mesh
+    [position]="[0, 0, 0]"
+    [castShadow]="true"
+    [receiveShadow]="true"
+  >
+
+    <!--
+    Tube:
+    https://threejs.org/docs/#api/en/geometries/TubeGeometry
+    path — Curve - A 3D path that inherits from the Curve base class. Default is a quadratic bezier curve.
+    tubularSegments — Integer - The number of segments that make up the tube. Default is 64.
+    radius — Float - The radius of the tube. Default is 1.
+    radialSegments — Integer - The number of segments that make up the cross-section. Default is 8.
+    closed — Boolean Is the tube open or closed. Default is false.
+    -->
+    <ngt-tube-geometry [args]="[
+    curve,
+    32,
+    thickness,
+    24,
+    false
+    ]"></ngt-tube-geometry>
+
+    <ngt-mesh-standard-material #matSides="ngtMeshStandardMaterial"
+                                [parameters]="{
+     color: '#2B2C36',
+     transparent: false
+      }"
+    ></ngt-mesh-standard-material>
+
+  </ngt-mesh>
+
+
+</ngt-group>

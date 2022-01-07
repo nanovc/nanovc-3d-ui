@@ -57,11 +57,17 @@
     ></ngt-mesh-physical-material>
   </ngt-mesh>
 
-  <app-content [position]="[0,-0.175 + 0 * 0.1,0.02] " [scale]="0.05"></app-content>
-  <app-content [position]="[0.1,-0.175 + 1 * 0.1,0.02] " [scale]="0.05"></app-content>
-  <app-content [position]="[0,-0.175 + 1 * 0.1,0.02] " [scale]="0.05"></app-content>
-  <app-content [position]="[-0.05,-0.175 + 2 * 0.1,0.02] " [scale]="0.05"></app-content>
-  <app-content [position]="[0.05,-0.175 + 2 * 0.1,0.02] " [scale]="0.05"></app-content>
-  <app-content [position]="[-0.05,-0.175 + 3 * 0.1,0.02] " [scale]="0.05"></app-content>
+  <app-content [position]="[0,-0.175 + 0 * 0.1,0.02]" [scale]="0.05"></app-content>
+  <app-content [position]="[0.1,-0.175 + 1 * 0.1,0.02]" [scale]="0.05"></app-content>
+  <app-content [position]="[0,-0.175 + 1 * 0.1,0.02]" [scale]="0.05"></app-content>
+  <app-content [position]="[-0.05,-0.175 + 2 * 0.1,0.02]" [scale]="0.05"></app-content>
+  <app-content [position]="[0.05,-0.175 + 2 * 0.1,0.02]" [scale]="0.05"></app-content>
+  <app-content [position]="[-0.05,-0.175 + 3 * 0.1,0.02]" [scale]="0.05"></app-content>
+
+  <app-content-link [startPosition]="[0,-0.175 + 0 * 0.1 + 0.025,0.0265]" [endPosition]="[0.1,-0.175 + 1 * 0.1 - 0.025,0.0265]" [direction]="[0,1,0]" [thickness]="0.0025"></app-content-link>
+  <app-content-link [startPosition]="[0,-0.175 + 0 * 0.1 + 0.025,0.0265]" [endPosition]="[0,-0.175 + 1 * 0.1 - 0.025,0.0265]" [direction]="[0,1,0]" [thickness]="0.0025"></app-content-link>
+  <app-content-link [startPosition]="[0,-0.175 + 1 * 0.1 + 0.025,0.0265]" [endPosition]="[-0.05,-0.175 + 2 * 0.1 - 0.025,0.0265]" [direction]="[0,1,0]" [thickness]="0.0025"></app-content-link>
+  <app-content-link [startPosition]="[0,-0.175 + 1 * 0.1 + 0.025,0.0265]" [endPosition]="[0.05,-0.175 + 2 * 0.1 - 0.025,0.0265]" [direction]="[0,1,0]" [thickness]="0.0025"></app-content-link>
+  <app-content-link [startPosition]="[-0.05,-0.175 + 2 * 0.1 + 0.025,0.0265]" [endPosition]="[-0.05,-0.175 + 3 * 0.1 - 0.025,0.0265]" [direction]="[0,1,0]" [thickness]="0.0025"></app-content-link>
 
 </ngt-group>

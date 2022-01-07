@@ -13,7 +13,7 @@ import {isNumeric} from "rxjs/internal-compatibility";
  */
 export function offset(position: NgtVector3, x: number, y: number, z: number): NgtVector3
 {
-  const pos = (position instanceof Vector3) ? position : new Vector3().fromArray(position as Vector3Tuple);
+  const pos = toVector3(position);
   return pos.clone().add(new Vector3(x, y, z));
 }
 
@@ -28,10 +28,22 @@ export function offset(position: NgtVector3, x: number, y: number, z: number): N
  */
 export function scale(vector: NgtVector3, x: number, y: number, z: number): NgtVector3
 {
+  const result = toVector3(vector);
+  return result.clone().multiply(new Vector3(x, y, z));
+}
+
+/**
+ * Converts the given vector definition to an actual vector.
+ * @param vector The vector definition to convert.
+ * @param defaultValue The default value to use if the vector was not specified.
+ * @return {Vector3}
+ */
+export function toVector3(vector: NgtVector3, defaultValue?: Vector3): Vector3
+{
   const result = vector ?
     (vector instanceof Vector3) ? vector :
       typeof vector === 'number' ? new Vector3(vector, vector, vector) :
-      new Vector3().fromArray(vector as Vector3Tuple) :
-    new Vector3(1, 1, 1);
-  return result.clone().multiply(new Vector3(x, y, z));
+        new Vector3().fromArray(vector as Vector3Tuple) :
+    defaultValue ? defaultValue : new Vector3(0, 0, 0);
+  return result;
 }
