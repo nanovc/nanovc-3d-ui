@@ -4,7 +4,7 @@
 <!--Material for the sides of the content: -->
 <ngt-mesh-standard-material #matSides="ngtMeshStandardMaterial"
                             [parameters]="{
-     color: 'cornflowerblue',
+     color: '#2B2C36',
      transparent: false
       }"
 ></ngt-mesh-standard-material>
@@ -44,7 +44,11 @@
     {
       steps: 1,
       depth: 0.2,
-      bevelEnabled: false
+      bevelThickness: 0.1,
+      bevelSize: 0.1,
+      bevelOffset: 0.05,
+      bevelSegments: 10,
+      bevelEnabled: true
     }]"></ngt-extrude-geometry>
 
   </ngt-mesh>

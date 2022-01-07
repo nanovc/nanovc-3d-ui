@@ -13,12 +13,13 @@ export function createRoundedSquare(x: number, y: number, size: number, radius: 
   const rad = radius;
   const deg90 = Math.PI / 2;
   const deg180 = Math.PI;
+  const deg270 = deg180 + deg90;
   const halfWidth = size / 2;
   const bottomLeftX = x - halfWidth;
   const bottomLeftY = y - halfWidth;
   const topRightX = x + halfWidth;
   const topRightY = y + halfWidth;
-  return new Shape()
+  const result = new Shape()
     .moveTo(bottomLeftX + rad, bottomLeftY)
     .lineTo(topRightX - rad, bottomLeftY)
     .arc(0, rad, rad, -deg90, 0, false)
@@ -27,7 +28,11 @@ export function createRoundedSquare(x: number, y: number, size: number, radius: 
     .lineTo(bottomLeftX + rad, topRightY)
     .arc(0, -rad, rad, deg90, deg180, false)
     .lineTo(bottomLeftX, bottomLeftY + rad)
-    .arc(rad, 0, rad, deg180, -deg90, false);
+    .arc(rad, 0, rad, -deg180, -deg90, false)
+  ;
+  result.closePath();
+  result.autoClose = true;
+  return result;
 }
 
 /**
