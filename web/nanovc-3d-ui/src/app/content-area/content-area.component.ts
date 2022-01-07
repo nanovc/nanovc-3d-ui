@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {NgtVector3} from "@angular-three/core";
 import {Shape} from "three";
-import { createRoundedSquare } from '../shapes'
+import {createRoundedSquare, createRoundedSquareOutline} from '../shapes'
 import {RepoComponentBase} from "../repo-component-base";
 
 @Component({
@@ -30,8 +30,8 @@ export class ContentAreaComponent extends RepoComponentBase implements OnInit {
 
   ngOnInit(): void {
 
-    this.shapeBase = createRoundedSquare(0,0, 0.5, 0.1);
-    this.shapeBorder = createRoundedSquare(0,0, 0.5, 0.1);
+    this.shapeBase = createRoundedSquare(0,0, 0.49, 0.1);
+    this.shapeBorder = createRoundedSquareOutline(0,0, 0.48, 0.5, 0.1, 0.1);
   }
 
 }

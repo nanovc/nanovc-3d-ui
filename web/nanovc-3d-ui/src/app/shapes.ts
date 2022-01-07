@@ -29,3 +29,27 @@ export function createRoundedSquare(x: number, y: number, size: number, radius: 
     .lineTo(bottomLeftX, bottomLeftY + rad)
     .arc(rad, 0, rad, deg180, -deg90, false);
 }
+
+/**
+ * Creates the outline of a rounded square shape.
+ * @param x The x coordinate for the the middle of the rounded square.
+ * @param y The y coordinate for the the middle of the rounded square.
+ * @param innerSize The size of each inner side (width and height) of the rounded square hole.
+ * @param outerSize The size of each outer side (width and height) of the rounded square outline.
+ * @param innerRadius The inner radius of curvature for the rounded corners of the square hole.
+ * @param outerRadius The outer radius of curvature for the rounded corners of the square outline.
+ * @return {Shape}
+ */
+export function createRoundedSquareOutline(x: number, y: number, innerSize: number, outerSize: number, innerRadius: number, outerRadius: number): Shape
+{
+  // Create the outer shape:
+  const outerShape = createRoundedSquare(x, y, outerSize, outerRadius);
+
+  // Create the shape for the inner hole:
+  const innerShape = createRoundedSquare(x, y, innerSize, innerRadius);
+
+  // Add a hole into the outer shape:
+  outerShape.holes = [innerShape];
+
+  return outerShape;
+}
