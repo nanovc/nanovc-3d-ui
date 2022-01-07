@@ -36,6 +36,7 @@ import {CommitComponent} from './commit/commit.component';
 import {ContentAreaComponent} from './content-area/content-area.component';
 import {CommitMarkerComponent} from './commit-marker/commit-marker.component';
 import {RepoComponentBase} from "./repo-component-base";
+import { ContentComponent } from './content/content.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import {RepoComponentBase} from "./repo-component-base";
     RepoComponent,
     CommitComponent,
     ContentAreaComponent,
-    CommitMarkerComponent
+    CommitMarkerComponent,
+    ContentComponent
   ],
   imports: [
     BrowserModule,

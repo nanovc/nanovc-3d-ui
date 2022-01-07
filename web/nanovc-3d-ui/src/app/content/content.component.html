@@ -1,0 +1,53 @@
+<!--Material for the face of the content: -->
+<ngt-mesh-normal-material #matFace="ngtMeshNormalMaterial"></ngt-mesh-normal-material>
+
+<!--Material for the sides of the content: -->
+<ngt-mesh-standard-material #matSides="ngtMeshStandardMaterial"
+                            [parameters]="{
+     color: 'cornflowerblue',
+     transparent: false
+      }"
+></ngt-mesh-standard-material>
+
+<ngt-group
+  [position]="offsetBy(0,0,0)"
+  [scale]="scale"
+>
+
+  <ngt-mesh
+    [position]="[0, 0, 0]"
+    [castShadow]="true"
+    [receiveShadow]="true"
+    [material]="[matFace.material, matSides.material]"
+  >
+
+    <!--
+    Extrude:
+    https://threejs.org/docs/#api/en/geometries/ExtrudeGeometry
+    curveSegments — int. Number of points on the curves. Default is 12.
+    steps — int. Number of points used for subdividing segments along the depth of the extruded spline. Default is 1.
+    depth — float. Depth to extrude the shape. Default is 1.
+    bevelEnabled — bool. Apply beveling to the shape. Default is true.
+    bevelThickness — float. How deep into the original shape the bevel goes. Default is 0.2.
+    bevelSize — float. Distance from the shape outline that the bevel extends. Default is bevelThickness - 0.1.
+    bevelOffset — float. Distance from the shape outline that the bevel starts. Default is 0.
+    bevelSegments — int. Number of bevel layers. Default is 3.
+    extrudePath — THREE.Curve. A 3D spline path along which the shape should be extruded. Bevels not supported for path extrusion.
+    UVGenerator — Object. object that provides UV generator functions
+    This object extrudes a 2D shape to a 3D geometry.
+    When creating a Mesh with this geometry, if you'd like to have a separate material used for its face and its extruded sides,
+    you can use an array of materials.
+    The first material will be applied to the face;
+    the second material will be applied to the sides.    -->
+    <ngt-extrude-geometry [args]="[
+    shape,
+    {
+      steps: 1,
+      depth: 0.2,
+      bevelEnabled: false
+    }]"></ngt-extrude-geometry>
+
+  </ngt-mesh>
+
+
+</ngt-group>
