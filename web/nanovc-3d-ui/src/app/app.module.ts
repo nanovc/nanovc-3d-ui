@@ -28,14 +28,18 @@ import {
 import { RepoComponent } from './repo/repo.component';
 import { CommitComponent } from './commit/commit.component';
 import { ContentAreaComponent } from './content-area/content-area.component';
+import { CommitMarkerComponent } from './commit-marker/commit-marker.component';
+import {RepoComponentBase} from "./repo-component-base";
 
 @NgModule({
   declarations: [
     AppComponent,
+    RepoComponentBase,
     CubeComponent,
     RepoComponent,
     CommitComponent,
-    ContentAreaComponent
+    ContentAreaComponent,
+    CommitMarkerComponent
   ],
   imports: [
     BrowserModule,

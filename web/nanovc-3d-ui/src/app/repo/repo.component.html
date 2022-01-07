@@ -1,6 +1,6 @@
 <ngt-mesh
   #mesh="ngtMesh"
-  [position]="position"
+  [position]="offsetBy(0,0,0)"
   [rotation]="[-(0.5 | mathConst:'PI'), 0, 0]"
   [receiveShadow]="true"
 >
@@ -17,6 +17,7 @@
 
 <!--  <ngt-mesh-normal-material></ngt-mesh-normal-material>-->
 
-  <app-commit [position]="[0,-0.3,0.20]"></app-commit>
+  <app-commit [position]="offsetBy(0,0,0.20)"></app-commit>
+  <app-commit [position]="offsetBy(0,0,0.40)"></app-commit>
 
 </ngt-mesh>
