@@ -2,14 +2,55 @@
   #mesh="ngtMesh"
   [position]="offsetBy(0,0,-0.005)"
   [castShadow]="true"
+  [receiveShadow]="true"
 >
 
-  <ngt-extrude-geometry [args]="[shape,
+  <ngt-extrude-geometry [args]="[
+  shapeBase,
     {
       steps: 1,
       depth: 0.01,
       bevelEnabled: false
     }]"></ngt-extrude-geometry>
 
-  <ngt-mesh-normal-material></ngt-mesh-normal-material>
+  <ngt-mesh-physical-material
+    [parameters]="{
+     color: 'white',
+     transparent: true,
+     opacity: 0.7,
+     transmission: 0.4,
+     roughness: 0.9,
+     clearcoat: 1,
+     side: '' | side:'double'
+     }"
+  ></ngt-mesh-physical-material>
+</ngt-mesh>
+
+
+<ngt-mesh
+  #mesh2="ngtMesh"
+  [position]="offsetBy(0,0,0.05)"
+  [castShadow]="true"
+  [receiveShadow]="true"
+>
+
+  <ngt-extrude-geometry [args]="[
+  shapeBorder,
+    {
+      steps: 1,
+      depth: 0.02,
+      bevelEnabled: false
+    }]"></ngt-extrude-geometry>
+
+  <ngt-mesh-physical-material
+    [parameters]="{
+     color: 'cornflowerblue',
+     transparent: true,
+     opacity: 0.7,
+     transmission: 0.4,
+     roughness: 0.9,
+     clearcoat: 1,
+     side: '' | side:'double'
+      }"
+  ></ngt-mesh-physical-material>
 </ngt-mesh>

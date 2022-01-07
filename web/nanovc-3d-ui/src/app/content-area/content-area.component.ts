@@ -16,11 +16,22 @@ export class ContentAreaComponent extends RepoComponentBase implements OnInit {
     super();
   }
 
-  shape?: Shape;
+  /**
+   * This is the shape for the base (flat area) of the content area.
+   * @type {Shape}
+   */
+  shapeBase?: Shape;
+
+  /**
+   * This is the shape for the border of the content area.
+   * @type {Shape}
+   */
+  shapeBorder?: Shape;
 
   ngOnInit(): void {
 
-    this.shape = createRoundedSquare(0,0, 0.5, 0.1);
+    this.shapeBase = createRoundedSquare(0,0, 0.5, 0.1);
+    this.shapeBorder = createRoundedSquare(0,0, 0.5, 0.1);
   }
 
 }

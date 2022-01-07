@@ -1,10 +1,15 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import {NgtColorPipeModule, NgtCoreModule, NgtMathPipeModule} from "@angular-three/core";
-import { CubeComponent } from './cube/cube.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {
+  NgtCoreModule,
+  NgtColorPipeModule,
+  NgtSidePipeModule,
+  NgtMathPipeModule
+} from "@angular-three/core";
+import {CubeComponent} from './cube/cube.component';
 import {NgtMeshModule} from "@angular-three/core/meshes";
 import {
   NgtBoxGeometryModule, NgtCylinderGeometryModule,
@@ -25,10 +30,10 @@ import {
   NgtSobaGizmoViewcubeModule,
   NgtSobaGizmoViewportModule
 } from "@angular-three/soba/abstractions";
-import { RepoComponent } from './repo/repo.component';
-import { CommitComponent } from './commit/commit.component';
-import { ContentAreaComponent } from './content-area/content-area.component';
-import { CommitMarkerComponent } from './commit-marker/commit-marker.component';
+import {RepoComponent} from './repo/repo.component';
+import {CommitComponent} from './commit/commit.component';
+import {ContentAreaComponent} from './content-area/content-area.component';
+import {CommitMarkerComponent} from './commit-marker/commit-marker.component';
 import {RepoComponentBase} from "./repo-component-base";
 
 @NgModule({
@@ -64,8 +69,11 @@ import {RepoComponentBase} from "./repo-component-base";
     NgtMeshNormalMaterialModule,
     NgtMeshPhysicalMaterialModule,
     NgtCylinderGeometryModule,
+    NgtSidePipeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule
+{
+}
