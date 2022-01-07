@@ -1,11 +1,13 @@
-<ngt-mesh
-  #mesh="ngtMesh"
-  [position]="offsetBy(0,0,-0.005)"
-  [castShadow]="true"
-  [receiveShadow]="true"
->
+<ngt-group [position]="offsetBy(0,0,0)">
 
-  <ngt-extrude-geometry [args]="[
+  <ngt-mesh
+    #mesh="ngtMesh"
+    [position]="[0,0,-0.005]"
+    [castShadow]="true"
+    [receiveShadow]="true"
+  >
+
+    <ngt-extrude-geometry [args]="[
   shapeBase,
     {
       steps: 1,
@@ -13,8 +15,8 @@
       bevelEnabled: false
     }]"></ngt-extrude-geometry>
 
-  <ngt-mesh-physical-material
-    [parameters]="{
+    <ngt-mesh-physical-material
+      [parameters]="{
      color: 'white',
      transparent: true,
      opacity: 0.7,
@@ -23,18 +25,18 @@
      clearcoat: 1,
      side: '' | side:'double'
      }"
-  ></ngt-mesh-physical-material>
-</ngt-mesh>
+    ></ngt-mesh-physical-material>
+  </ngt-mesh>
 
 
-<ngt-mesh
-  #mesh2="ngtMesh"
-  [position]="offsetBy(0,0,0.05)"
-  [castShadow]="true"
-  [receiveShadow]="true"
->
+  <ngt-mesh
+    #mesh2="ngtMesh"
+    [position]="[0,0,0.05]"
+    [castShadow]="true"
+    [receiveShadow]="true"
+  >
 
-  <ngt-extrude-geometry [args]="[
+    <ngt-extrude-geometry [args]="[
   shapeBorder,
     {
       steps: 1,
@@ -42,8 +44,8 @@
       bevelEnabled: false
     }]"></ngt-extrude-geometry>
 
-  <ngt-mesh-physical-material
-    [parameters]="{
+    <ngt-mesh-physical-material
+      [parameters]="{
      color: 'cornflowerblue',
      transparent: true,
      opacity: 0.7,
@@ -52,5 +54,6 @@
      clearcoat: 1,
      side: '' | side:'double'
       }"
-  ></ngt-mesh-physical-material>
-</ngt-mesh>
+    ></ngt-mesh-physical-material>
+  </ngt-mesh>
+</ngt-group>

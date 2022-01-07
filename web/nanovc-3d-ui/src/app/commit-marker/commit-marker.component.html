@@ -1,9 +1,9 @@
-<!--<ngt-group
-  [position]="position"
->-->
+<ngt-group
+  [position]="offsetBy(0,0,0)"
+>
 <ngt-mesh
   #mesh1="ngtMesh"
-  [position]="offsetBy(0, 0, 0)"
+  [position]="[0, 0, 0]"
   [castShadow]="true"
   [receiveShadow]="true"
 >
@@ -31,7 +31,7 @@
 
 <ngt-mesh
   #mesh2="ngtMesh"
-  [position]="offsetBy(0, 0.08, 0)"
+  [position]="[0, 0.08, 0]"
   [castShadow]="true"
 >
 
@@ -55,4 +55,4 @@
   <ngt-mesh-normal-material></ngt-mesh-normal-material>
 </ngt-mesh>
 
-<!--</ngt-group>-->
+</ngt-group>

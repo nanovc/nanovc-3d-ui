@@ -9,7 +9,7 @@ import {
   NgtSidePipeModule,
   NgtMathPipeModule
 } from "@angular-three/core";
-import {CubeComponent} from './cube/cube.component';
+import {NgtGroupModule} from "@angular-three/core/group";
 import {NgtMeshModule} from "@angular-three/core/meshes";
 import {
   NgtBoxGeometryModule, NgtCylinderGeometryModule,
@@ -30,6 +30,7 @@ import {
   NgtSobaGizmoViewcubeModule,
   NgtSobaGizmoViewportModule
 } from "@angular-three/soba/abstractions";
+import {CubeComponent} from './cube/cube.component';
 import {RepoComponent} from './repo/repo.component';
 import {CommitComponent} from './commit/commit.component';
 import {ContentAreaComponent} from './content-area/content-area.component';
@@ -51,6 +52,7 @@ import {RepoComponentBase} from "./repo-component-base";
     AppRoutingModule,
     NgtCoreModule,
     NgtMeshModule,
+    NgtGroupModule,
     NgtBoxGeometryModule,
     NgtMeshBasicMaterialModule,
     NgtMeshStandardMaterialModule,
